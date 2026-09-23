@@ -1,277 +1,528 @@
-# Ex.No.7 – Prompt Engineering for Effective Communication with AI
+# EX-NO-7 – Prompt Engineering for Effective Communication with AI
 
 ## AIM
 
-To understand and apply the principles of **Prompt Engineering** for effective communication with Artificial Intelligence and analyze how structured instructions can improve the accuracy, relevance, and usefulness of AI-generated outputs.
+To understand and apply Prompt Engineering techniques for effective communication with Artificial Intelligence by designing clear, specific, and structured prompts to obtain accurate, relevant, and useful outputs.
 
 ---
 
-## PROCEDURE
+# INTRODUCTION
 
-### Step 1: Import Required Libraries
+Artificial Intelligence has become an important technology in education, research, programming, healthcare, business, and many other fields. AI systems can understand and generate text, answer questions, summarize information, generate programs, translate languages, and assist users in solving problems.
 
-- Import Pandas for creating and manipulating the dataset.
-- Import NumPy for numerical operations and random data generation.
-- Import Matplotlib for visualization.
-- Import Seaborn for creating statistical plots.
+Communication between a user and an AI system generally takes place through instructions or questions called **prompts**.
 
-### Step 2: Generate a Sample Dataset
+A prompt is the input given to an Artificial Intelligence system to instruct it to perform a particular task.
 
-- Set a random seed to ensure reproducible results.
-- Generate a sample dataset containing 1000 records.
-- Create demographic groups based on:
-  - Age Group
-  - Income Level
-- Generate creditworthiness values.
-- Generate loan approval outcomes.
-- Store all generated information in a Pandas DataFrame.
+### Example of a Simple Prompt
 
-### Step 3: Define True Positive Rate Calculation
+Explain Artificial Intelligence.
 
-- Create a function to calculate the **True Positive Rate (TPR)**.
-- Divide the data according to a selected demographic group.
-- Identify True Positives (TP).
-- Identify False Negatives (FN).
-- Calculate TPR using:
+A simple prompt may produce a general response because it does not specify the required level, audience, format, or content.
 
-`TPR = TP / (TP + FN)`
+### Example of an Effective Prompt
 
-### Step 4: Calculate TPR for Age Groups
+Explain Artificial Intelligence in simple language for first-year engineering students. Include its definition, applications, advantages, and limitations.
 
-- Apply the TPR function to the `AgeGroup` column.
-- Calculate the True Positive Rate for each age group.
-- Store the results in a separate DataFrame.
+The second prompt provides additional context and instructions, making the expected response clearer.
 
-### Step 5: Calculate TPR for Income Levels
-
-- Apply the TPR function to the `IncomeLevel` column.
-- Calculate the True Positive Rate for each income category.
-- Store the results in a separate DataFrame.
-
-### Step 6: Visualize TPR Results
-
-- Create bar charts for the TPR values.
-- Display TPR values for different age groups.
-- Display TPR values for different income levels.
-- Add numerical TPR values above the bars.
-
-### Step 7: Identify Potential Bias
-
-- Find the maximum and minimum TPR for age groups.
-- Find the maximum and minimum TPR for income levels.
-- Calculate the difference between maximum and minimum TPR.
-- If the difference is greater than 0.1, display a message indicating a potential disparity in TPRs.
+The process of designing effective instructions for AI systems is called **Prompt Engineering**.
 
 ---
 
-## THEORY
+# THEORY
 
-### 1. Prompt Engineering
+## 1. PROMPT
 
-Prompt Engineering is the process of designing and structuring instructions given to an Artificial Intelligence model to obtain accurate, relevant, and useful responses.
+A prompt is an instruction, question, statement, or input provided to an Artificial Intelligence system to obtain a desired response.
 
-A well-designed prompt provides the AI with sufficient context, instructions, constraints, and expected output format.
+The prompt acts as a communication interface between the user and the AI model.
 
-### 2. Importance of Prompt Engineering
+The quality of an AI-generated response can depend on:
 
-Prompt engineering helps users communicate effectively with AI systems.
+- Clarity of the prompt
+- Specificity of instructions
+- Context provided
+- Examples included
+- Output format requested
+- Constraints specified
 
-It can be used to:
+### Example
 
-- Improve response accuracy.
-- Provide relevant context.
-- Control the response format.
-- Control tone and level of detail.
-- Handle complex tasks.
-- Convert vague requirements into structured instructions.
+**Simple Prompt:**
 
-### 3. Clear Instructions
+Write about Machine Learning.
 
-A prompt should clearly explain what the AI needs to do.
+**Effective Prompt:**
 
-For example:
+Explain Machine Learning for engineering students. Include its definition, types, applications, advantages, and limitations. Use simple language and provide the answer with headings.
 
-`Explain CNN in simple terms for a first-year engineering student.`
+The effective prompt gives the AI more information about the expected response.
 
-This provides both the task and the expected level of explanation.
+---
 
-### 4. Providing Context
+## 2. PROMPT ENGINEERING
 
-Context gives the AI additional information required to understand the task correctly.
+Prompt Engineering is the process of designing, creating, testing, and refining prompts to obtain effective responses from Artificial Intelligence models.
 
-For example:
+It involves understanding the task and communicating the requirements clearly to the AI system.
 
-`Explain Python programming for an ECE engineering student with basic programming knowledge.`
+### General Process
 
-The additional context helps define the intended audience.
+1. Identify the task.
+2. Understand the expected output.
+3. Create a clear prompt.
+4. Provide necessary context.
+5. Add instructions and constraints.
+6. Submit the prompt to the AI model.
+7. Evaluate the generated response.
+8. Refine the prompt if required.
 
-### 5. Specifying Output Format
+Prompt Engineering helps improve the interaction between humans and AI systems.
 
-The expected format can be included in the prompt.
+---
 
-Examples include:
+## 3. COMPONENTS OF AN EFFECTIVE PROMPT
 
-- Bullet points
-- Tables
-- Step-by-step explanations
-- JSON
-- Code
-- Reports
+An effective prompt generally contains the following components:
 
-Example:
+### A. Task
 
-`Compare CNN and RNN in a table with five differences.`
-
-### 6. Role-Based Prompting
-
-Role-based prompting assigns a particular role or perspective to the AI.
-
-Example:
-
-`Act as a Python programming instructor and explain exception handling with examples.`
-
-This can help structure the response according to the requested context.
-
-### 7. Few-Shot Prompting
-
-Few-shot prompting provides examples of the expected input-output behavior before giving the actual task.
-
-Example:
-
-`Input: 2 → Even`
-`Input: 5 → Odd`
-`Input: 8 → ?`
-
-The examples help demonstrate the expected pattern.
-
-### 8. Zero-Shot Prompting
-
-Zero-shot prompting asks the AI to perform a task without providing examples.
-
-Example:
-
-`Classify the following sentence as positive or negative: "The product is excellent."`
-
-### 9. Breaking Complex Tasks into Steps
-
-Complex tasks can be divided into smaller instructions.
-
-For example:
-
-1. Read the dataset.
-2. Clean the data.
-3. Calculate statistics.
-4. Generate a visualization.
-5. Explain the result.
-
-This makes the requested workflow clearer.
-
-### 10. Controlling Tone and Length
-
-Prompts can specify how the response should be written.
+The task specifies what the AI system should perform.
 
 Examples:
 
-`Explain in simple language.`
+- Summarize the following paragraph.
+- Write a Python program to calculate the average of three numbers.
+- Explain the working principle of a Convolutional Neural Network.
 
-`Give the answer in 100 words.`
+### B. Context
 
-`Write the answer in a formal academic style.`
+Context provides background information related to the task.
 
-### 11. Fairness and Bias
+**Example:**
 
-AI systems can produce biased outcomes when data or decision processes contain disparities.
+Explain Machine Learning to a first-year engineering student.
 
-In this experiment, **True Positive Rate (TPR)** is calculated across different demographic groups to examine whether the rate of correctly identifying creditworthy applicants differs between groups.
+Here, the target audience provides the required context.
 
-### 12. True Positive Rate
+### C. Instructions
 
-True Positive Rate measures the proportion of actual positive cases that are correctly identified.
+Instructions specify how the task should be performed.
 
-In this experiment:
+Examples:
 
-- Positive = Creditworthy
-- True Positive = Creditworthy and Approved
-- False Negative = Creditworthy and Not Approved
+- Explain using simple language.
+- Use headings and bullet points.
+- Include suitable examples.
+- Keep the explanation concise.
 
-Formula:
+### D. Examples
 
-`TPR = TP / (TP + FN)`
+Examples help the AI understand the expected pattern or format.
 
-Comparing TPR across groups can help identify disparities that may require further investigation.
+**Example:**
+
+Classify the following sentence as Positive or Negative.
+
+Example:
+
+"I like this product." → Positive
+
+Now classify:
+
+"The service was excellent."
+
+### E. Constraints
+
+Constraints define limitations or conditions for the generated response.
+
+Examples:
+
+- Explain the topic in less than 200 words.
+- Provide only five points.
+- Do not use complex technical terms.
+- Use a professional tone.
 
 ---
 
-## PROGRAM
+# 4. WORKING PRINCIPLE OF PROMPT ENGINEERING
 
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-# Generate a sample dataset
-np.random.seed(42)
-data_size = 1000
-# Demographic groups and loan approval outcomes
-age_group = np.random.choice(['Under 30', '30-50', 'Over 50'], size=data_size, p=[0.3, 0.5, 0.2])
-income_level = np.random.choice(['Low', 'Medium', 'High'], size=data_size, p=[0.4, 0.4, 0.2])
-creditworthy = np.random.choice([1, 0], size=data_size, p=[0.7, 0.3])
- # 1: Creditworthy, 0: Not creditworthy
-approved = np.random.choice([1, 0], size=data_size, p=[0.6, 0.4])
-  # 1: Approved, 0: Not approved
-loan_df = pd.DataFrame({'AgeGroup': age_group, 'IncomeLevel': income_level, 'Creditworthy': creditworthy, 'Approved': approved})
-# Function to calculate TPR
-def calculate_tpr(df, group_col):
-    tpr_data = []
-    groups = df[group_col].unique()
-    for group in groups:
-        group_data = df[df[group_col] == group]
-        tp = ((group_data['Creditworthy'] == 1) & (group_data['Approved'] == 1)).sum()
-        fn = ((group_data['Creditworthy'] == 1) & (group_data['Approved'] == 0)).sum()
-        tpr = tp / (tp + fn) if (tp + fn) > 0 else 0
-        tpr_data.append({'Group': group, 'TPR': tpr})
-    return pd.DataFrame(tpr_data)
+The working principle of Prompt Engineering involves communication between the user and an AI model.
 
-# Calculate TPR for Age Groups
-tpr_age = calculate_tpr(loan_df, 'AgeGroup')
-# Calculate TPR for Income Levels
-tpr_income = calculate_tpr(loan_df, 'IncomeLevel')
+The user first identifies the required task. A prompt is then created using appropriate instructions, context, examples, and constraints.
 
-# Plotting the TPR for different groups
-# Plotting the TPR for different groups
-plt.figure(figsize=(10,4))
-plt.subplot(1, 2, 1)
-sns.barplot(data=tpr_age, x='Group', y='TPR', palette='viridis', hue='Group', legend=False)
-plt.title('True Positive Rate by Age Group')
-plt.ylabel('True Positive Rate')
-plt.xlabel('Age Group')
-for i, tpr in enumerate(tpr_age['TPR']):
-    plt.text(i, tpr + 0.02, f'{tpr:.2f}', ha='center', va='bottom')
-plt.subplot(1, 2, 2)
-sns.barplot(data=tpr_income, x='Group', y='TPR', palette='viridis', hue='Group', legend=False)
-plt.title('True Positive Rate by Income Level')
-plt.ylabel('True Positive Rate')
-plt.xlabel('Income Level')
-for i, tpr in enumerate(tpr_income['TPR']):
-    plt.text(i, tpr + 0.02, f'{tpr:.2f}', ha='center', va='bottom')
-plt.tight_layout()
-plt.show()
-# Highlighting potential bias
-max_tpr_age = tpr_age['TPR'].max()
-min_tpr_age = tpr_age['TPR'].min()
-max_tpr_income = tpr_income['TPR'].max()
-min_tpr_income = tpr_income['TPR'].min()
-if max_tpr_age - min_tpr_age > 0.1:
-    print(f"Potential bias detected in Age Group TPRs: Max TPR = {max_tpr_age:.2f}, Min TPR = {min_tpr_age:.2f}")
-if max_tpr_income - min_tpr_income > 0.1:
-    print(f"Potential bias detected in Income Level TPRs: Max TPR = {max_tpr_income:.2f}, Min TPR = {min_tpr_income:.2f}")
+The prompt is provided to the AI model, which processes the input and generates a response.
+
+The generated response is evaluated. If the output does not satisfy the requirements, the prompt is modified and submitted again.
+
+This process is called **Prompt Refinement**.
+
+### WORKFLOW
+```text
+User Requirement  
+↓  
+Task Identification  
+↓  
+Prompt Creation  
+↓  
+Adding Context and Instructions  
+↓  
+AI Model  
+↓  
+Generated Response  
+↓  
+Output Evaluation  
+↓  
+Prompt Refinement  
+↓  
+Improved Response
 ```
+---
 
-## OUTPUT
+# 5. BLOCK DIAGRAM
 
-<img width="1672" height="741" alt="image" src="https://github.com/user-attachments/assets/46f31560-c5c2-4d74-98b1-ff2e072c3f13" />
+## PROMPT ENGINEERING FOR EFFECTIVE COMMUNICATION WITH AI
 
+```
+┌─────────────────────────┐  
+│    USER REQUIREMENT     │  
+└────────────┬────────────┘  
+             ↓  
+┌─────────────────────────┐  
+│    IDENTIFY THE TASK    │  
+└────────────┬────────────┘  
+             ↓  
+┌─────────────────────────┐  
+│     CREATE PROMPT       │  
+└────────────┬────────────┘  
+             ↓  
+┌─────────────────────────┐  
+│ ADD CONTEXT, EXAMPLES   │  
+│    AND INSTRUCTIONS     │  
+└────────────┬────────────┘  
+             ↓  
+┌─────────────────────────┐  
+│        AI MODEL         │  
+└────────────┬────────────┘  
+             ↓  
+┌─────────────────────────┐  
+│    GENERATE RESPONSE    │  
+└────────────┬────────────┘  
+             ↓  
+┌─────────────────────────┐  
+│    EVALUATE OUTPUT      │  
+└────────────┬────────────┘  
+             ↓  
+        Is Output
+        Satisfactory?
+          /       \
+        Yes        No
+         ↓          ↓
+  Final Output   Refine Prompt
+                    ↓
+                 AI Model
+```
+---
 
-## CONCLUSION
+# 6. PROMPT REFINEMENT
 
-Thus, the principles of **Prompt Engineering** were studied and applied to understand how clear, structured, and contextual instructions can improve communication with AI systems. The experiment also demonstrated how AI-related decision processes can be examined for disparities by comparing True Positive Rates across demographic groups. Prompt engineering provides a structured approach for obtaining useful and well-formatted AI outputs.
+Prompt refinement is the process of improving a prompt after analyzing the generated response.
+
+The following changes can be made during refinement:
+
+- Add more context.
+- Make instructions clearer.
+- Specify the expected output format.
+- Add examples.
+- Define the target audience.
+- Add limitations.
+- Remove ambiguous instructions.
+
+### Example
+
+**Initial Prompt:**
+
+Explain AI.
+
+**Refined Prompt:**
+
+Explain Artificial Intelligence for first-year engineering students. Include its definition, working principle, applications, advantages, and limitations. Use simple English and provide the answer with headings.
+
+The refined prompt provides more guidance to the AI system.
+
+---
+
+# 7. APPLICATIONS OF PROMPT ENGINEERING
+
+Prompt Engineering can be applied in several areas.
+
+### Education
+
+AI can assist students by:
+
+- Explaining concepts
+- Generating practice questions
+- Summarizing lessons
+- Preparing learning materials
+
+**Example:**
+
+Explain the working principle of a transistor in simple language.
+
+### Programming
+
+AI can assist programmers with:
+
+- Program generation
+- Code explanation
+- Debugging
+- Code optimization
+
+**Example:**
+
+Write a Python program to find the largest number in a list. Explain each part of the program.
+
+### Content Generation
+
+Prompt Engineering can be used to generate:
+
+- Articles
+- Reports
+- Emails
+- Summaries
+- Presentations
+
+### Data Analysis
+
+AI can assist in understanding datasets and identifying trends.
+
+**Example:**
+
+Analyze the dataset and identify important trends. Provide the results in bullet points.
+
+### Customer Support
+
+AI-powered systems can respond to customer questions and provide assistance using appropriately designed prompts.
+
+### Research
+
+Researchers can use AI systems to:
+
+- Summarize information
+- Generate ideas
+- Organize content
+- Explain complex concepts
+
+### Language Translation
+
+AI systems can translate content between different languages.
+
+**Example:**
+
+Translate the following English sentence into simple German.
+
+---
+
+# 8. ADVANTAGES OF PROMPT ENGINEERING
+
+- Improves communication with AI systems.
+- Produces more relevant responses.
+- Improves response clarity.
+- Helps generate structured outputs.
+- Saves time.
+- Reduces unnecessary information.
+- Allows users to control output format.
+- Can improve consistency.
+- Useful for different types of tasks.
+- Helps users obtain better results from AI models.
+
+---
+
+# 9. LIMITATIONS OF PROMPT ENGINEERING
+
+- The quality of output depends on the quality of the prompt.
+- Ambiguous prompts may produce irrelevant responses.
+- AI-generated information may sometimes be inaccurate.
+- Complex tasks may require multiple prompt refinements.
+- Different prompts may produce different outputs.
+- Insufficient context may reduce response quality.
+- AI responses should be verified before use in important applications.
+- Prompt design may require experimentation.
+
+---
+
+# 10. GOALS OF PROMPT ENGINEERING
+
+### Improve Accuracy
+
+Provide precise context and rules to reduce errors and unwanted responses.
+
+### Control Tone and Format
+
+Specify the required style, length, structure, or output format.
+
+### Handle Complex Tasks
+
+Break complex tasks into smaller and clearly defined steps.
+
+### Bridge Vague Inputs
+
+Convert everyday or vague user requirements into structured instructions that an AI system can process effectively.
+
+---
+
+# 11. PROMPTING TECHNIQUES
+
+## 11.1 Zero-Shot Prompting
+
+Zero-shot prompting gives the AI a direct task without providing examples.
+
+**Example:**
+
+Summarize this article in three bullet points.
+
+---
+
+## 11.2 Few-Shot Prompting
+
+Few-shot prompting provides examples to teach the AI the required pattern, tone, or style.
+
+**Example:**
+
+Here are two examples of friendly email replies. Write a third reply in the same style.
+
+---
+
+## 11.3 Step-by-Step Prompting
+
+Step-by-step prompting asks for a complex task to be handled through clearly defined stages.
+
+**Example:**
+
+Explain the steps involved in developing a machine learning model.
+
+---
+
+## 11.4 Role-Based Prompting
+
+Role-based prompting assigns the AI a specific role or perspective.
+
+**Example:**
+
+Act as an experienced electronics engineering teacher and explain the working of a transistor.
+
+---
+
+## 11.5 Instruction-Based Prompting
+
+Instruction-based prompting uses clear and explicit commands to define the required output.
+
+**Example:**
+
+Write a product description under 50 words using a professional tone.
+
+---
+
+# 12. ESSENTIAL PROMPT TECHNIQUES
+
+### Context Framing
+
+Set clear roles, target audiences, tones, and output formats.
+
+### Advanced Prompting
+
+Use examples and structured instructions for complex problem-solving tasks.
+
+### Parameter Tuning
+
+In AI systems that expose generation settings, parameters such as temperature and top-p can influence creativity and predictability.
+
+---
+
+# 13. PRACTICE PROMPTS
+
+## FOR DOCUMENTS
+
+- Visualize learning
+- Generate handwritten-style notes
+- Create sticky-note style explanations
+- Act as a teacher
+- Act as a doctor
+- Act as a lawyer
+- Generate 10 ideas related to a research field
+
+## GENERAL QUESTIONS
+
+- Explain [TOPIC] like I am a beginner.
+- Give me 10 ideas for [GOAL].
+- Write a professional [TYPE] for [AUDIENCE].
+- Improve this text and create a plan for [GOAL].
+- Create a step-by-step plan for [GOAL].
+
+---
+
+# 14. IMAGE PROMPT KEYWORDS
+
+The following descriptive keywords can be used when designing image-generation prompts:
+
+- /underwater — Underwater scene
+- /pencilsketch — Pencil drawing
+- /goldenhour — Golden hour lighting
+- /lowpoly — Low-poly 3D
+- /wildlife — Wildlife photography
+- /cinematicphoto — Movie-like photography
+- /interior — Interior design visualization
+- /anime — Anime artwork
+- /macrophotо — Macro photography
+- /oilpainting — Oil painting style
+- /droneview — Drone aerial shot
+- /blackandwhite — Monochrome style
+- /pixelart — Pixel art
+- /architecturephoto — Architectural photography
+- /hyperrealistic — Extreme realism
+
+---
+
+# 15. APPLICATION PROMPTS
+
+### Travel Guide Prompt
+
+"I want you to act as a travel guide. I will provide my location and the type of places I want to visit. Suggest suitable places and similar places nearby."
+
+### Email Marketing Prompt
+
+"I'm looking for a [type of email] that speaks directly to the needs of my [ideal customer persona] and encourages them to take [desired action]."
+
+### Storytelling Prompt
+
+"I want you to act as a storyteller. Create an entertaining, imaginative, and engaging story suitable for the target audience. My first request is to create an interesting story about perseverance."
+
+---
+
+# 16. CORE TAKEAWAYS
+
+- **Clarity matters:** Specific instructions and constraints help prevent vague or off-target responses.
+- **Context is important:** Providing background information helps the AI understand the task.
+- **Examples are useful:** Examples can guide the required response pattern and style.
+- **Output format matters:** Specifying the desired format makes the response easier to use.
+- **Prompt refinement improves results:** Prompts can be modified based on the quality of the generated response.
+- **Different techniques suit different tasks:** Zero-shot, few-shot, role-based, and instruction-based prompting can be applied according to the requirement.
+
+---
+
+# RESULT
+
+The experiment on **Prompt Engineering for Effective Communication with AI** was successfully performed.
+
+Different prompting techniques such as zero-shot prompting, few-shot prompting, role-based prompting, instruction-based prompting, and context-based prompting were studied.
+
+It was observed that clear instructions, relevant context, examples, and output constraints can improve the relevance, structure, and usefulness of AI-generated responses.
+
+---
+
+# CONCLUSION
+
+In conclusion, Prompt Engineering provides an effective communication bridge between human requirements and Artificial Intelligence systems. Properly designed prompts help communicate the required task, context, instructions, and constraints clearly.
+
+The experiment demonstrated that prompt quality can significantly affect the relevance, clarity, structure, and usefulness of AI-generated responses. Prompt refinement can further improve the output when the initial response does not satisfy the required conditions.
